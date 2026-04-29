@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { LineChart, Smartphone, Coins } from "lucide-react";
+import PremiumIcon from "./PremiumIcon";
 
 export default function InvestorStory() {
   const stats = [
@@ -9,18 +10,21 @@ export default function InvestorStory() {
       label: "Annual Gold Imports in India",
       value: "800+ Tons",
       icon: Coins,
+      image3d: "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Coin/3D/coin_3d.png",
       trend: "Consistent growth"
     },
     {
       label: "Monthly Recharges/Payments",
       value: "15 Billion+",
       icon: Smartphone,
+      image3d: "/mobile-recharge-3d.png",
       trend: "High frequency"
     },
     {
       label: "Our Market Potential",
       value: "$400B+",
       icon: LineChart,
+      image3d: "/chart-3d.png",
       trend: "Untapped intersection"
     }
   ];
@@ -82,12 +86,10 @@ export default function InvestorStory() {
                     <p className="text-sm font-medium text-muted mb-2 uppercase tracking-wider">{stat.label}</p>
                     <h3 className="text-4xl font-bold text-white mb-2">{stat.value}</h3>
                     <p className="text-sm text-primary-400 flex items-center gap-1">
-                      <LineChart className="w-4 h-4" /> {stat.trend}
+                      <img src="/chart-3d.png" alt="" className="w-5 h-5 object-contain" /> {stat.trend}
                     </p>
                   </div>
-                  <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform">
-                    <stat.icon className="w-6 h-6 text-white" />
-                  </div>
+                  <PremiumIcon icon={stat.icon} image3d={stat.image3d} size={32} className="w-14 h-14" colorClass="text-white" glowColor="rgba(249,115,22,0.5)" />
                 </div>
               </motion.div>
             ))}

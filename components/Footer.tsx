@@ -18,10 +18,18 @@ export default function Footer() {
               India’s first platform converting everyday utility payments into pure 24K digital gold. Stop paying. Start earning.
             </p>
             <div className="flex gap-5">
-              <a href="#" className="text-muted hover:text-white transition-colors bg-white/5 p-2 rounded-full hover:bg-white/10"><Globe className="w-4 h-4" /></a>
-              <a href="#" className="text-muted hover:text-white transition-colors bg-white/5 p-2 rounded-full hover:bg-white/10"><Share2 className="w-4 h-4" /></a>
-              <a href="#" className="text-muted hover:text-white transition-colors bg-white/5 p-2 rounded-full hover:bg-white/10"><MessageCircle className="w-4 h-4" /></a>
-              <a href="#" className="text-muted hover:text-white transition-colors bg-white/5 p-2 rounded-full hover:bg-white/10"><Mail className="w-4 h-4" /></a>
+              <a href="#" className="text-muted hover:text-white transition-all bg-white/5 p-2.5 rounded-full hover:bg-white/10 hover:scale-110 hover:-translate-y-1 duration-300">
+                <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Globe%20with%20meridians/3D/globe_with_meridians_3d.png" alt="Website" className="w-5 h-5 object-contain" />
+              </a>
+              <a href="#" className="text-muted hover:text-white transition-all bg-white/5 p-2.5 rounded-full hover:bg-white/10 hover:scale-110 hover:-translate-y-1 duration-300">
+                <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Link/3D/link_3d.png" alt="Share" className="w-5 h-5 object-contain" />
+              </a>
+              <a href="#" className="text-muted hover:text-white transition-all bg-white/5 p-2.5 rounded-full hover:bg-white/10 hover:scale-110 hover:-translate-y-1 duration-300">
+                <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Speech%20balloon/3D/speech_balloon_3d.png" alt="Chat" className="w-5 h-5 object-contain" />
+              </a>
+              <a href="#" className="text-muted hover:text-white transition-all bg-white/5 p-2.5 rounded-full hover:bg-white/10 hover:scale-110 hover:-translate-y-1 duration-300">
+                <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/E-mail/3D/e-mail_3d.png" alt="Email" className="w-5 h-5 object-contain" />
+              </a>
             </div>
           </div>
           

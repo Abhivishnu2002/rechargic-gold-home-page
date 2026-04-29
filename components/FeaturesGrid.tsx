@@ -3,13 +3,15 @@
 import { Smartphone, Zap, Droplet, Wifi, Tv, CreditCard } from "lucide-react";
 import { motion } from "framer-motion";
 
+import PremiumIcon from "./PremiumIcon";
+
 const features = [
-  { icon: Smartphone, name: "Mobile Recharge", desc: "Prepaid & Postpaid" },
-  { icon: Zap, name: "Electricity Bills", desc: "All state boards" },
-  { icon: Tv, name: "DTH", desc: "Tata Play, Airtel, etc." },
-  { icon: CreditCard, name: "Credit Cards", desc: "Pay all bank bills" },
-  { icon: Wifi, name: "Broadband", desc: "Jio, Airtel, BSNL" },
-  { icon: Droplet, name: "Utility Bills", desc: "Water & Gas" },
+  { icon: Smartphone, image3d: "/mobile-recharge-3d.png", name: "Mobile Recharge", desc: "Prepaid & Postpaid" },
+  { icon: Zap, image3d: "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/High%20voltage/3D/high_voltage_3d.png", name: "Electricity Bills", desc: "All state boards" },
+  { icon: Tv, image3d: "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Television/3D/television_3d.png", name: "DTH", desc: "Tata Play, Airtel, etc." },
+  { icon: CreditCard, image3d: "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Credit%20card/3D/credit_card_3d.png", name: "Credit Cards", desc: "Pay all bank bills" },
+  { icon: Wifi, image3d: "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Satellite%20antenna/3D/satellite_antenna_3d.png", name: "Broadband", desc: "Jio, Airtel, BSNL" },
+  { icon: Droplet, image3d: "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Droplet/3D/droplet_3d.png", name: "Utility Bills", desc: "Water & Gas" },
 ];
 
 export default function FeaturesGrid() {
@@ -55,9 +57,14 @@ export default function FeaturesGrid() {
                 <div className="absolute -inset-0.5 bg-gradient-gold rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500"></div>
                 
                 <div className="relative flex items-start gap-4 p-6 glass-card rounded-2xl border border-white/5 hover:border-transparent transition-all duration-300 h-full">
-                  <div className="w-14 h-14 rounded-xl bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-500/20 group-hover:scale-110 transition-all duration-300">
-                    <Icon className="w-6 h-6 text-white group-hover:text-primary-500 transition-colors" />
-                  </div>
+                  <PremiumIcon 
+                    icon={Icon} 
+                    image3d={feature.image3d}
+                    size={32} 
+                    className="flex-shrink-0 w-16 h-16" 
+                    colorClass="text-primary-500" 
+                    glowColor="rgba(249,115,22,0.5)" 
+                  />
                   
                   <div className="flex-1">
                     <div className="flex flex-wrap items-start lg:items-center justify-between gap-2 mb-1">

@@ -3,12 +3,14 @@
 import { ShieldCheck, Lock, Award, Server } from "lucide-react";
 import { motion } from "framer-motion";
 
+import PremiumIcon from "./PremiumIcon";
+
 export default function Trust() {
   const badges = [
-    { icon: ShieldCheck, title: "256-bit", desc: "Encryption", color: "text-green-400" },
-    { icon: Lock, title: "100%", desc: "Secure Payments", color: "text-blue-400" },
-    { icon: Award, title: "24K Pure", desc: "Digital Gold", color: "text-accent-400" },
-    { icon: Server, title: "PCI DSS", desc: "Compliant", color: "text-purple-400" },
+    { icon: ShieldCheck, image3d: "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Shield/3D/shield_3d.png", title: "256-bit", desc: "Encryption", color: "text-green-400", glow: "rgba(74,222,128,0.5)" },
+    { icon: Lock, image3d: "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Locked/3D/locked_3d.png", title: "100%", desc: "Secure Payments", color: "text-blue-400", glow: "rgba(96,165,250,0.5)" },
+    { icon: Award, image3d: "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Trophy/3D/trophy_3d.png", title: "24K Pure", desc: "Digital Gold", color: "text-accent-400", glow: "rgba(245,158,11,0.5)" },
+    { icon: Server, image3d: "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Desktop%20computer/3D/desktop_computer_3d.png", title: "PCI DSS", desc: "Compliant", color: "text-purple-400", glow: "rgba(192,132,252,0.5)" },
   ];
 
   return (
@@ -29,7 +31,7 @@ export default function Trust() {
           <div className="relative px-8 py-20 sm:px-16 flex flex-col lg:flex-row items-center justify-between gap-16">
             <div className="max-w-2xl text-center lg:text-left">
               <div className="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-1.5 text-sm font-medium text-white ring-1 ring-white/10 mb-6">
-                <ShieldCheck className="h-4 w-4 text-green-400" /> Trust & Security
+                <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Shield/3D/shield_3d.png" alt="" className="h-5 w-5 object-contain" /> Trust & Security
               </div>
               <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl mb-6">
                 Bank-Grade Security for Your Gold.
@@ -48,9 +50,9 @@ export default function Trust() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   whileHover={{ scale: 1.05 }}
-                  className="bg-white/5 p-6 rounded-2xl border border-white/5 flex flex-col items-center text-center group hover:bg-white/10 transition-colors"
+                  className="flex flex-col items-center text-center group"
                 >
-                  <badge.icon className={`w-8 h-8 mb-3 ${badge.color} group-hover:scale-110 transition-transform`} />
+                  <PremiumIcon icon={badge.icon} image3d={badge.image3d} size={36} className="mb-4 w-16 h-16" colorClass={badge.color} glowColor={badge.glow} />
                   <p className="font-bold text-white text-lg">{badge.title}</p>
                   <p className="text-xs text-muted mt-1 uppercase tracking-wider">{badge.desc}</p>
                 </motion.div>

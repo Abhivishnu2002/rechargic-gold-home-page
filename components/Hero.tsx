@@ -28,7 +28,7 @@ export default function Hero() {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="mb-8 inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-sm font-medium text-primary-500 ring-1 ring-primary-500/30"
           >
-            <Sparkles className="h-4 w-4" />
+            <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Sparkles/3D/sparkles_3d.png" alt="" className="h-5 w-5 object-contain" />
             <span>Premium Fintech Experience</span>
           </motion.div>
           

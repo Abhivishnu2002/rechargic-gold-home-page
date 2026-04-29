@@ -1,13 +1,52 @@
 "use client";
 
-import { Zap, Coins, TrendingUp } from "lucide-react";
+import { SmartphoneCharging, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
+import PremiumIcon from "./PremiumIcon";
+
+const CustomGoldBarIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    {/* Back Bar */}
+    <path d="M10 10 L18 2 L22 5 L14 13 Z" fill="url(#gradLight)" />
+    <path d="M14 13 L22 5 L22 7 L14 15 Z" fill="url(#gradDark)" />
+    <path d="M10 10 L10 12 L14 15 L14 13 Z" fill="url(#gradMedium)" />
+    
+    {/* Marks on back bar */}
+    <line x1="13" y1="8" x2="17" y2="4" stroke="#FFFBEB" strokeWidth="1" strokeLinecap="round" />
+    <line x1="15" y1="10" x2="19" y2="6" stroke="#FFFBEB" strokeWidth="1" strokeLinecap="round" />
+
+    {/* Front Bar */}
+    <path d="M4 16 L14 6 L18 9 L8 19 Z" fill="url(#gradLight)" />
+    <path d="M8 19 L18 9 L18 11 L8 21 Z" fill="url(#gradDark)" />
+    <path d="M4 16 L4 18 L8 21 L8 19 Z" fill="url(#gradMedium)" />
+    
+    {/* Marks on front bar */}
+    <line x1="6" y1="14" x2="10" y2="10" stroke="#FFFBEB" strokeWidth="1" strokeLinecap="round" />
+    <line x1="8" y1="16" x2="12" y2="12" stroke="#FFFBEB" strokeWidth="1" strokeLinecap="round" />
+    <line x1="10" y1="18" x2="14" y2="14" stroke="#FFFBEB" strokeWidth="1" strokeLinecap="round" />
+
+    <defs>
+      <linearGradient id="gradLight" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#FDE047" />
+        <stop offset="100%" stopColor="#F59E0B" />
+      </linearGradient>
+      <linearGradient id="gradMedium" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#F59E0B" />
+        <stop offset="100%" stopColor="#D97706" />
+      </linearGradient>
+      <linearGradient id="gradDark" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#D97706" />
+        <stop offset="100%" stopColor="#B45309" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
 
 const valueProps = [
   {
     name: "Instant Recharge",
     description: "Lightning fast payments for mobile, DTH, electricity and more with zero processing fees.",
-    icon: Zap,
+    image3d: "/mobile-recharge-3d.png",
     color: "text-blue-400",
     bg: "bg-blue-500/10",
     border: "group-hover:border-blue-500/50",
@@ -16,7 +55,7 @@ const valueProps = [
   {
     name: "Earn Digital Gold",
     description: "Get assured 24K digital gold on every successful transaction. No useless scratch cards.",
-    icon: Coins,
+    image3d: "/gold-bar-3d.png",
     color: "text-accent-400",
     bg: "bg-accent-500/10",
     border: "group-hover:border-accent-500/50",
@@ -25,7 +64,7 @@ const valueProps = [
   {
     name: "Build Smart Savings",
     description: "Watch your gold accumulate over time. Sell or redeem for physical coins whenever you want.",
-    icon: TrendingUp,
+    image3d: "/piggybank-3d.png",
     color: "text-primary-500",
     bg: "bg-primary-500/10",
     border: "group-hover:border-primary-500/50",
@@ -66,9 +105,14 @@ export default function ValueProp() {
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: `radial-gradient(circle at center, var(--color-${prop.color.split('-')[1]}-500) 0%, transparent 70%)`, opacity: 0.05 }} />
 
                   <dt className="flex flex-col items-center gap-y-6 text-xl font-bold leading-7 text-white relative z-10">
-                    <div className={`mb-2 flex h-20 w-20 items-center justify-center rounded-2xl ${prop.bg} ring-1 ring-white/10 group-hover:ring-white/20 transition-all duration-500`}>
-                      <prop.icon className={`h-10 w-10 ${prop.color} drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]`} aria-hidden="true" />
-                    </div>
+                    <PremiumIcon 
+                      icon={prop.icon as any} 
+                      image3d={prop.image3d}
+                      size={44} 
+                      className="mb-2 h-20 w-20" 
+                      colorClass={prop.color} 
+                      glowColor="rgba(249,115,22,0.5)" 
+                    />
                     {prop.name}
                   </dt>
                   <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-muted relative z-10">

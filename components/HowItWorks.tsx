@@ -3,25 +3,30 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, Smartphone, Zap, Coins } from "lucide-react";
 
+import PremiumIcon from "./PremiumIcon";
+
 export default function HowItWorks() {
   const steps = [
     {
       id: 1,
       title: "Choose Service",
       description: "Select from mobile recharge, DTH, electricity or FASTag from our vast list of providers.",
-      icon: Smartphone
+      icon: Smartphone,
+      image3d: "/mobile-recharge-3d.png"
     },
     {
       id: 2,
       title: "Pay Instantly",
       description: "Pay securely via UPI, Cards, or Net Banking in just a few taps.",
-      icon: Zap
+      icon: Zap,
+      image3d: "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/High%20voltage/3D/high_voltage_3d.png"
     },
     {
       id: 3,
       title: "Earn Gold",
       description: "Watch your digital gold balance grow automatically after every successful transaction.",
-      icon: Coins
+      icon: Coins,
+      image3d: "/gold-bar-3d.png"
     }
   ];
 
@@ -73,14 +78,12 @@ export default function HowItWorks() {
                 transition={{ duration: 0.5, delay: index * 0.3 }}
                 className="relative z-10 flex flex-col items-center text-center group"
               >
-                {/* Icon Circle */}
-                <div className="w-[90px] h-[90px] rounded-full glass-dark border border-white/10 flex items-center justify-center mb-8 relative group-hover:border-primary-500/50 transition-colors duration-300">
-                  <div className="absolute inset-0 rounded-full bg-gradient-gold opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
-                  
-                  <step.icon className="w-10 h-10 text-primary-500 group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_15px_rgba(249,115,22,0.5)]" />
+                {/* Premium Icon */}
+                <div className="mb-8 relative">
+                  <PremiumIcon icon={step.icon} image3d={step.image3d} size={44} className="w-20 h-20" colorClass="text-primary-500" glowColor="rgba(249,115,22,0.5)" />
                   
                   {/* Completion checkmark (decorative) */}
-                  <div className="absolute -bottom-2 -right-2 bg-background rounded-full">
+                  <div className="absolute -bottom-2 -right-2 bg-background rounded-full z-20">
                     <CheckCircle2 className="w-6 h-6 text-green-500" />
                   </div>
                 </div>

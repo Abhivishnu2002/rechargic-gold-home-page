@@ -21,7 +21,7 @@ export default function CTA() {
           <div className="absolute inset-0 bg-gradient-to-t from-primary-500/10 to-transparent pointer-events-none"></div>
 
           <div className="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-1.5 text-sm font-medium text-accent-400 ring-1 ring-white/10 mb-8 mx-auto">
-            <Sparkles className="h-4 w-4" /> Ready to Upgrade?
+            <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Sparkles/3D/sparkles_3d.png" alt="" className="h-5 w-5 object-contain" /> Ready to Upgrade?
           </div>
           
           <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">

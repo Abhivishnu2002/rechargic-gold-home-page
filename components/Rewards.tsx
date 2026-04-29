@@ -3,38 +3,44 @@
 import { Gift, Users, Flame, Percent } from "lucide-react";
 import { motion } from "framer-motion";
 
+import PremiumIcon from "./PremiumIcon";
+
 export default function Rewards() {
   const rewards = [
     {
       title: "Daily Cashback",
       description: "Earn up to 5% extra gold on your first transaction of the day.",
       icon: Percent,
+      image3d: "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Money%20bag/3D/money_bag_3d.png",
       color: "text-green-400",
-      bg: "bg-green-500/10",
+      glow: "rgba(74,222,128,0.5)",
       border: "hover:border-green-500/50 hover:shadow-[0_0_30px_rgba(74,222,128,0.2)]"
     },
     {
       title: "Referral Rewards",
       description: "Invite friends and get ₹50 worth of gold for each successful referral.",
       icon: Users,
+      image3d: "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Handshake/3D/handshake_3d.png",
       color: "text-blue-400",
-      bg: "bg-blue-500/10",
+      glow: "rgba(96,165,250,0.5)",
       border: "hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(96,165,250,0.2)]"
     },
     {
       title: "Recharge Streaks",
       description: "Pay bills for 3 consecutive months and unlock a multiplier bonus.",
       icon: Flame,
+      image3d: "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Fire/3D/fire_3d.png",
       color: "text-orange-400",
-      bg: "bg-orange-500/10",
+      glow: "rgba(251,146,60,0.5)",
       border: "hover:border-orange-500/50 hover:shadow-[0_0_30px_rgba(251,146,60,0.2)]"
     },
     {
       title: "Spin the Wheel",
       description: "Test your luck weekly. Win up to 1 gram of 24K pure gold.",
       icon: Gift,
+      image3d: "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Wrapped%20gift/3D/wrapped_gift_3d.png",
       color: "text-purple-400",
-      bg: "bg-purple-500/10",
+      glow: "rgba(192,132,252,0.5)",
       border: "hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(192,132,252,0.2)]"
     }
   ];
@@ -76,9 +82,14 @@ export default function Rewards() {
               {/* Floating coin effect background */}
               <div className="absolute -right-6 -top-6 w-24 h-24 rounded-full bg-gradient-gold opacity-10 blur-xl group-hover:opacity-20 group-hover:scale-150 transition-all duration-500"></div>
 
-              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 ring-1 ring-white/10 group-hover:ring-white/30 transition-all duration-300 ${reward.bg}`}>
-                <reward.icon className={`w-8 h-8 ${reward.color} drop-shadow-md`} />
-              </div>
+              <PremiumIcon 
+                icon={reward.icon} 
+                image3d={reward.image3d}
+                size={36} 
+                className="mb-8 h-16 w-16" 
+                colorClass={reward.color} 
+                glowColor={reward.glow} 
+              />
               <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary-500 transition-colors">{reward.title}</h3>
               <p className="text-muted leading-relaxed">{reward.description}</p>
             </motion.div>

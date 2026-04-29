@@ -3,6 +3,8 @@
 import { Target, TrendingUp, Sparkles, Heart, Gift, Baby } from "lucide-react";
 import { motion } from "framer-motion";
 
+import PremiumIcon from "./PremiumIcon";
+
 export default function GoldVault() {
   const chartPoints = [20, 35, 25, 45, 60, 50, 80, 70, 95];
   
@@ -22,7 +24,7 @@ export default function GoldVault() {
           className="lg:w-1/2"
         >
           <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-sm font-medium text-accent-400 ring-1 ring-accent-500/30 mb-6">
-            <Sparkles className="h-4 w-4" /> 24K Digital Gold
+            <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Sparkles/3D/sparkles_3d.png" alt="" className="h-5 w-5 object-contain" /> 24K Digital Gold
           </div>
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-6 leading-tight">
             Your Personal <br/>
@@ -35,18 +37,18 @@ export default function GoldVault() {
           <div className="grid sm:grid-cols-2 gap-6">
             <motion.div 
               whileHover={{ y: -5, scale: 1.02 }}
-              className="glass-card p-6 rounded-2xl border border-white/5"
+              className="glass-card p-6 rounded-2xl border border-white/5 group"
             >
-              <TrendingUp className="w-8 h-8 text-primary-500 mb-4" />
+              <PremiumIcon image3d="/chart-3d.png" size={40} className="mb-6 h-16 w-16" colorClass="text-primary-500" glowColor="rgba(249,115,22,0.5)" />
               <h4 className="text-lg font-bold text-white mb-2">Live Tracking</h4>
               <p className="text-sm text-muted">Monitor your portfolio with real-time 24K gold market rates.</p>
             </motion.div>
             
             <motion.div 
               whileHover={{ y: -5, scale: 1.02 }}
-              className="glass-card p-6 rounded-2xl border border-white/5"
+              className="glass-card p-6 rounded-2xl border border-white/5 group"
             >
-              <Target className="w-8 h-8 text-accent-500 mb-4" />
+              <PremiumIcon image3d="/target-3d.png" size={40} className="mb-6 h-16 w-16" colorClass="text-accent-500" glowColor="rgba(245,158,11,0.5)" />
               <h4 className="text-lg font-bold text-white mb-2">Auto-Save</h4>
               <p className="text-sm text-muted">Let your daily recharges automatically fund your future goals.</p>
             </motion.div>
@@ -95,18 +97,16 @@ export default function GoldVault() {
               <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider text-muted">Active Goals</h4>
               <div className="space-y-3">
                 {[
-                  { name: "Wedding Fund", icon: Heart, progress: 65, color: "from-pink-500 to-rose-400" },
-                  { name: "Diwali Festival", icon: Gift, progress: 40, color: "from-amber-500 to-orange-400" },
-                  { name: "Child's Future", icon: Baby, progress: 15, color: "from-blue-500 to-cyan-400" }
+                  { name: "Wedding Fund", icon: Heart, image3d: "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Sparkling%20heart/3D/sparkling_heart_3d.png", progress: 65, color: "from-pink-500 to-rose-400" },
+                  { name: "Diwali Festival", icon: Gift, image3d: "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Wrapped%20gift/3D/wrapped_gift_3d.png", progress: 40, color: "from-amber-500 to-orange-400" },
+                  { name: "Child's Future", icon: Baby, image3d: "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Baby/3D/baby_3d.png", progress: 15, color: "from-blue-500 to-cyan-400" }
                 ].map((goal, i) => (
                   <motion.div 
                     key={i}
                     whileHover={{ scale: 1.02 }}
                     className="flex items-center gap-4 bg-white/5 p-3 rounded-2xl border border-white/5 hover:bg-white/10 transition-colors cursor-pointer"
                   >
-                    <div className="w-10 h-10 rounded-full bg-background flex items-center justify-center flex-shrink-0">
-                      <goal.icon className="w-5 h-5 text-white" />
-                    </div>
+                    <PremiumIcon icon={goal.icon} image3d={goal.image3d} size={24} className="w-10 h-10 flex-shrink-0" colorClass="text-white" glowColor="rgba(255,255,255,0.3)" />
                     <div className="flex-1">
                       <div className="flex justify-between mb-1">
                         <p className="text-sm font-medium text-white">{goal.name}</p>
