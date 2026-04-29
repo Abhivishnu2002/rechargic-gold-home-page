@@ -19,7 +19,7 @@ export default function Hero() {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: "easeOut" as const }}
           className="max-w-2xl lg:w-1/2 lg:flex-shrink-0 z-10 pt-10 lg:pt-0"
         >
           <motion.div 
@@ -62,7 +62,7 @@ export default function Hero() {
           {/* LAYER 1: Abstract Gold Motion Background */}
           <motion.div 
             animate={{ rotate: 360 }}
-            transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 50, repeat: Infinity, ease: "linear" as const }}
             className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none"
           >
             <div className="absolute w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] bg-gradient-gold rounded-full blur-[120px] opacity-20 mix-blend-screen" />
@@ -76,12 +76,12 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
+              transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" as const }}
               className="relative z-30"
             >
               <motion.div 
                 animate={{ y: [-10, 10, -10] }}
-                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" as const }}
                 whileHover={{ scale: 1.04 }}
                 className="glass-card rounded-[2rem] p-6 sm:p-8 border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.6)] w-full relative overflow-hidden group bg-[#0f0f0f]/80 backdrop-blur-2xl"
               >
@@ -114,12 +114,12 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, x: 30, y: 30 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
+              transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" as const }}
               className="absolute -top-28 -right-4 sm:-top-36 sm:-right-16 md:-top-32 md:-right-32 z-20 w-[200px] sm:w-[240px]"
             >
               <motion.div 
                 animate={{ y: [-8, 8, -8] }}
-                transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 1 }}
+                transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut" as const, delay: 1 }}
                 whileHover={{ scale: 1.05 }}
                 className="glass-card rounded-[1.5rem] p-4 sm:p-5 border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.4)] bg-[#141414]/90 backdrop-blur-xl rotate-[4deg] group relative overflow-hidden"
               >
@@ -136,12 +136,12 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, x: 30, y: 30 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
+              transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" as const }}
               className="absolute -bottom-28 -right-4 sm:-bottom-36 sm:-right-16 md:-bottom-32 md:-right-32 z-40 w-[220px] sm:w-[260px]"
             >
               <motion.div 
                 animate={{ y: [-12, 12, -12] }}
-                transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1.5 }}
+                transition={{ repeat: Infinity, duration: 7, ease: "easeInOut" as const, delay: 1.5 }}
                 whileHover={{ scale: 1.05 }}
                 className="glass-card rounded-[1.5rem] p-4 sm:p-6 border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.5)] bg-[#111111]/90 backdrop-blur-xl -rotate-[3deg] group"
               >
@@ -169,7 +169,7 @@ export default function Hero() {
                       strokeLinecap="round"
                       initial={{ pathLength: 0 }}
                       animate={{ pathLength: 1 }}
-                      transition={{ duration: 1.5, delay: 1.2, ease: "easeOut" }}
+                      transition={{ duration: 1.5, delay: 1.2, ease: "easeOut" as const }}
                     />
                     <defs>
                       <linearGradient id="heroGoldGradient" x1="0%" y1="0%" x2="100%" y2="0%">

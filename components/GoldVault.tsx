@@ -85,7 +85,7 @@ export default function GoldVault() {
                     initial={{ height: 0 }}
                     whileInView={{ height: `${point}%` }}
                     viewport={{ once: true }}
-                    transition={{ duration: 1, delay: i * 0.1, ease: "easeOut" }}
+                    transition={{ duration: 1, delay: i * 0.1, ease: "easeOut" as const }}
                     className="w-full bg-gradient-to-t from-primary-500/20 to-accent-500 rounded-t-sm"
                   ></motion.div>
                 ))}

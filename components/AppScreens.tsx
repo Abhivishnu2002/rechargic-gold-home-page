@@ -10,7 +10,7 @@ export default function AppScreens() {
       transition: {
         duration: 6,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: "easeInOut" as const
       }
     }
   };
@@ -21,7 +21,7 @@ export default function AppScreens() {
       transition: {
         duration: 7,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: "easeInOut" as const
       }
     }
   };
@@ -222,7 +222,7 @@ export default function AppScreens() {
                     initial={{ pathLength: 0, opacity: 0 }}
                     whileInView={{ pathLength: 1, opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
+                    transition={{ duration: 1.5, ease: "easeOut" as const, delay: 0.5 }}
                   />
                   <defs>
                     <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">

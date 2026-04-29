@@ -58,7 +58,7 @@ export default function HowItWorks() {
               initial={{ x: "-100%" }}
               whileInView={{ x: "100%" }}
               viewport={{ once: true }}
-              transition={{ duration: 2, ease: "easeInOut" }}
+              transition={{ duration: 2, ease: "easeInOut" as const }}
               className="w-full h-full bg-gradient-gold"
             />
           </div>
