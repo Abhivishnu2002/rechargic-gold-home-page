@@ -106,7 +106,6 @@ export default function ValueProp() {
 
                   <dt className="flex flex-col items-center gap-y-6 text-xl font-bold leading-7 text-white relative z-10">
                     <PremiumIcon 
-                      icon={prop.icon as any} 
                       image3d={prop.image3d}
                       size={44} 
                       className="mb-2 h-20 w-20" 
