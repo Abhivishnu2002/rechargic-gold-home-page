@@ -3,30 +3,19 @@
 @theme inline {
   --color-primary-50: #fff7ed;
   --color-primary-100: #ffedd5;
-  --color-primary-500: #f97316;
+  --color-primary-500: #f97316; /* Orange */
   --color-primary-600: #ea580c;
-  --color-accent-400: #fbbf24;
-  --color-accent-500: #f59e0b;
-  --color-accent-600: #d97706;
+  
+  --color-accent-gold-start: #f59e0b;
+  --color-accent-gold-end: #ffd700;
 
-  --color-background: #fdfdfd;
-  --color-foreground: #0f172a;
+  --color-background: #0b0b0b; /* Deep black */
+  --color-foreground: #eaeaea; /* Off-white */
+  --color-muted: #a1a1aa; /* Gray */
   
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
-  --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
   --animate-float: float 6s ease-in-out infinite;
-
-  @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
   @keyframes float {
     0% { transform: translateY(0px); }
@@ -40,19 +29,41 @@ body {
   color: var(--color-foreground);
   font-family: var(--font-sans);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-/* Glassmorphism utilities */
+/* Premium utility classes */
+@utility text-gradient-gold {
+  background: linear-gradient(to right, var(--color-accent-gold-start), var(--color-accent-gold-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@utility bg-gradient-gold {
+  background: linear-gradient(to right, var(--color-accent-gold-start), var(--color-accent-gold-end));
+}
+
 @utility glass {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(20, 20, 20, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-@utility glass-dark {
-  background: rgba(15, 23, 42, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+@utility glass-card {
+  background: linear-gradient(180deg, rgba(30, 30, 30, 0.4) 0%, rgba(15, 15, 15, 0.8) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+@utility glow-border {
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.3);
+  border-color: rgba(249, 115, 22, 0.5);
+}
+
+@utility glow-gold {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
 }
