@@ -1,53 +1,53 @@
+"use client";
+
 import React from "react";
-import { LucideIcon } from "lucide-react";
 
 interface PremiumIconProps {
-  icon?: LucideIcon | React.ElementType;
-  image3d?: string;
+  image3d: string;
+  alt: string;
   className?: string;
-  size?: number;
-  colorClass?: string;
-  glowColor?: string;
+  /** Controls the size variant of the icon container */
+  size?: "sm" | "md" | "lg" | "xl";
 }
 
-export default function PremiumIcon({ 
-  icon: Icon, 
+const sizeMap = {
+  sm: { container: "w-14 h-14", img: "w-10 h-10" },
+  md: { container: "w-24 h-24", img: "w-20 h-20" },
+  lg: { container: "w-32 h-32", img: "w-28 h-28" },
+  xl: { container: "w-40 h-40", img: "w-36 h-36" },
+};
+
+/**
+ * PremiumIcon — a reusable, transparent 3D icon component.
+ *
+ * - NO glass-card / bordered container — icon floats naturally
+ * - Consistent drop-shadow + gold glow for grounding
+ * - Smooth hover: scale + lift + glow intensify
+ * - Responsive sizing via predefined size tokens
+ */
+export default function PremiumIcon({
   image3d,
-  className = "", 
-  size = 24, 
-  colorClass = "text-accent-400",
-  glowColor = "rgba(245,158,11,0.5)" // default accent gold
+  alt,
+  className = "",
+  size = "md",
 }: PremiumIconProps) {
+  const s = sizeMap[size];
+
   return (
-    <div className={`group relative inline-flex items-center justify-center p-3.5 rounded-2xl bg-gradient-to-br from-white/10 to-white/0 backdrop-blur-md border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.4)] transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-1 hover:border-white/20 ${className}`}>
-      {/* Container Glow Layer */}
-      <div 
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" 
-        style={{ boxShadow: `0 0 20px ${glowColor}` }}
+    <div
+      className={`relative inline-flex items-center justify-center ${s.container} transition-all duration-300 ease-out group-hover:scale-105 group-hover:-translate-y-1 ${className}`}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={image3d}
+        alt={alt}
+        className={`${s.img} object-contain select-none pointer-events-none`}
+        style={{
+          filter:
+            "drop-shadow(0 20px 40px rgba(0,0,0,0.6)) drop-shadow(0 0 25px rgba(255,200,0,0.25))",
+        }}
+        draggable={false}
       />
-      
-      {/* Semi-3D Icon or Actual 3D Image */}
-      {image3d ? (
-        <img 
-          src={image3d} 
-          alt="3D Icon" 
-          width={size} 
-          height={size} 
-          className="relative z-10 transition-transform duration-300 group-hover:scale-110 object-contain drop-shadow-xl"
-          style={{ width: size, height: size }}
-        />
-      ) : Icon ? (
-        <Icon 
-          size={size} 
-          strokeWidth={2.5}
-          className={`${colorClass} relative z-10 transition-all duration-300`} 
-          style={{ 
-            fill: "currentColor", 
-            fillOpacity: 0.25,
-            filter: `drop-shadow(0 0 8px ${glowColor})`
-          }}
-        />
-      ) : null}
     </div>
   );
 }
